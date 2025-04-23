@@ -3,9 +3,11 @@ package org.example.javafx;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class PricingApp extends Application {
     @Override
@@ -15,7 +17,13 @@ public class PricingApp extends Application {
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Pricing Plans");
         stage.setScene(scene);
-        //TODO: add icon to the stage
+        try {
+            Image image = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/icon.png")));
+            stage.getIcons().add(image);
+        }
+        catch (Exception e) {
+            System.out.println("Image not found");
+        }
         stage.show();
     }
 
