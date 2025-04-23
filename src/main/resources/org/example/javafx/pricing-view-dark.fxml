@@ -12,7 +12,7 @@
 <VBox alignment="TOP_CENTER" prefHeight="580.0" prefWidth="872.0" spacing="20.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.javafx.PricingController">
    <HBox>
       <children>
-          <Label text="Ready to Choose Plan for Your Business?" textFill="WHITE">
+         <Label text="Ready to Choose Plan for Your Business?" textFill="WHITE">
             <font>
                <Font name="Calibri Bold" size="25.0" />
             </font>
@@ -33,7 +33,7 @@
    </HBox>
    <HBox alignment="CENTER" prefHeight="501.0" prefWidth="476.0" spacing="50.0" style="-fx-border-radius: 5; -fx-background-radius: 5;">
       <children>
-         <VBox prefHeight="200.0" prefWidth="200.0" spacing="10.0" style="-fx-border-color: gray; -fx-border-radius: 10; -fx-background-radius: 10;">
+         <VBox fx:id="vbox1" onMouseEntered="#hover" onMouseExited="#unHover" prefHeight="200.0" prefWidth="200.0" spacing="10.0" style="-fx-border-color: gray; -fx-border-radius: 10; -fx-background-radius: 10;">
             <children>
                <Label text="Free" textFill="WHITE">
                   <font>
@@ -42,7 +42,7 @@
                </Label>
                <HBox alignment="CENTER_LEFT">
                   <children>
-                     <Label text="\$0" textFill="WHITE">
+                     <Label fx:id="label1" text="\$0" textFill="WHITE">
                         <font>
                            <Font name="System Bold" size="40.0" />
                         </font>
@@ -50,13 +50,13 @@
                      <Label layoutX="10.0" layoutY="10.0" text="/mo" textFill="WHITE" />
                   </children>
                </HBox>
-                <Line endX="100.0" fill="#8f1212" startX="-100.0" stroke="#0000002a" />
+               <Line endX="100.0" fill="#8f1212" startX="-100.0" stroke="#0000002a" />
                <Label layoutX="19.0" layoutY="19.0" prefWidth="202.0" text="Up to 10 Sites with CMS &amp; HostingUp to 10 Sites with CMS &amp; Hosting" textFill="WHITE" wrapText="true">
                   <font>
                      <Font size="9.0" />
                   </font>
                </Label>
-               <Button mnemonicParsing="false" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10;" text="Shop" />
+               <Button fx:id="freePlan" mnemonicParsing="false" onAction="#handleShopButtonAction" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10;" text="Shop" />
                <Line endX="100.0" fill="#8f1212" layoutX="120.0" layoutY="128.0" startX="-100.0" stroke="#0000002a">
                   <VBox.margin>
                      <Insets bottom="20.0" />
@@ -85,7 +85,7 @@
             <padding>
                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
             </padding></VBox>
-         <VBox layoutX="35.0" layoutY="21.0" prefHeight="200.0" prefWidth="200.0" spacing="10.0" style="-fx-border-color: gray; -fx-border-radius: 10; -fx-background-radius: 10;">
+         <VBox fx:id="vbox2" layoutX="35.0" layoutY="21.0" onMouseEntered="#hover" onMouseExited="#unHover" prefHeight="200.0" prefWidth="200.0" spacing="10.0" style="-fx-border-color: gray; -fx-border-radius: 10; -fx-background-radius: 10;">
             <children>
                <Label text="Lite" textFill="WHITE">
                   <font>
@@ -94,7 +94,7 @@
                </Label>
                <HBox alignment="CENTER_LEFT">
                   <children>
-                     <Label text="\$65" textFill="WHITE">
+                     <Label fx:id="label2" text="\$65" textFill="WHITE">
                         <font>
                            <Font name="System Bold" size="40.0" />
                         </font>
@@ -108,7 +108,7 @@
                      <Font size="9.0" />
                   </font>
                </Label>
-               <Button mnemonicParsing="false" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10;" text="Shop" />
+               <Button fx:id="litePlan" mnemonicParsing="false" onAction="#handleShopButtonAction" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10;" text="Shop" />
                <Line endX="100.0" fill="#8f1212" layoutX="120.0" layoutY="128.0" startX="-100.0" stroke="#0000002a">
                   <VBox.margin>
                      <Insets bottom="20.0" />
@@ -143,7 +143,7 @@
                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
             </padding>
          </VBox>
-         <VBox layoutX="421.0" layoutY="21.0" prefHeight="200.0" prefWidth="200.0" spacing="10.0" style="-fx-border-color: gray; -fx-border-radius: 10; -fx-background-radius: 10;">
+         <VBox fx:id="vbox3" layoutX="421.0" layoutY="21.0" onMouseEntered="#hover" onMouseExited="#unHover" prefHeight="200.0" prefWidth="200.0" spacing="10.0" style="-fx-border-color: gray; -fx-border-radius: 10; -fx-background-radius: 10;">
             <children>
                <Label text="Pro" textFill="WHITE">
                   <font>
@@ -152,7 +152,7 @@
                </Label>
                <HBox alignment="CENTER_LEFT">
                   <children>
-                     <Label text="\$350" textFill="WHITE">
+                     <Label fx:id="label3" text="\$350" textFill="WHITE">
                         <font>
                            <Font name="System Bold" size="40.0" />
                         </font>
@@ -166,7 +166,7 @@
                      <Font size="9.0" />
                   </font>
                </Label>
-               <Button mnemonicParsing="false" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10;" text="Shop" />
+               <Button fx:id="proPlan" mnemonicParsing="false" onAction="#handleShopButtonAction" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10;" text="Shop" />
                <Line endX="100.0" fill="#8f1212" layoutX="120.0" layoutY="128.0" startX="-100.0" stroke="#0000002a">
                   <VBox.margin>
                      <Insets bottom="20.0" />
@@ -212,7 +212,7 @@
          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
       </padding>
    </HBox>
-    <padding>
-        <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
-    </padding>
+   <padding>
+      <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+   </padding>
 </VBox>
