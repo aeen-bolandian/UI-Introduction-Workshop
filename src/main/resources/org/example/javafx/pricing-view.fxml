@@ -9,7 +9,8 @@
 <?import javafx.scene.shape.SVGPath?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="TOP_CENTER" prefHeight="580.0" prefWidth="872.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.javafx.PricingController">
+<VBox fx:id="nightmode" alignment="TOP_CENTER" prefHeight="580.0" prefWidth="872.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.javafx.PricingController">
+   <Button mnemonicParsing="false" onAction="#switchToNightMode" style="-fx-background-color: black;" text="🌙" textFill="WHITE" />
    <HBox>
       <children>
           <Label text="Ready to Choose Plan for Your Business?">
